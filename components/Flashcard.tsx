@@ -14,10 +14,10 @@ const Flashcard = ({
       onClick={() =>
         side === "term" ? setSide("definition") : setSide("term")
       }
-      className="border w-1/2 h-1/2 flex flex-col justify-center items-center"
+      className="border border-black w-1/2 h-1/2 flex flex-col justify-center items-center rounded-md"
     >
       {side === "term" ? (
-        <h2>{flashcard.term}</h2>
+        <p>{flashcard.term}</p>
       ) : (
         <p>{flashcard.definition}</p>
       )}
