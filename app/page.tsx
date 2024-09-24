@@ -14,7 +14,7 @@ const Home = () => {
   const [side, setSide] = useState<"term" | "definition">("term");
   const [currentCard, setCurrentCard] = useState<number>(0);
   return (
-    <div className="px-4 py-8">
+    <div className="px-4 py-8 h-screen">
       <h1 className="text-2xl">Quizlet</h1>
       <h2>{currentCard}</h2>
       <Flashcard
