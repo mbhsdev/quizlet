@@ -2,6 +2,7 @@
 
 import CircleButton from "@/components/CircleButton";
 import Flashcard from "@/components/Flashcard";
+import TextField from "@/components/TextField";
 import { FlashcardType } from "@/interfaces";
 import { useState } from "react";
 
@@ -39,6 +40,10 @@ const Home = () => {
           text=">"
         />
       </div>
+      <form>
+        <TextField />
+        <TextField />
+      </form>
     </div>
   );
 };
