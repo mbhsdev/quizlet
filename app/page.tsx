@@ -1,5 +1,6 @@
 "use client";
 
+import CircleButton from "@/components/CircleButton";
 import Flashcard from "@/components/Flashcard";
 import { FlashcardType } from "@/interfaces";
 import { useState } from "react";
@@ -21,6 +22,21 @@ const Home = () => {
         side={side}
         setSide={setSide}
       />
+      <div className="flex flex-row justify-between">
+        <CircleButton
+          onClick={() => {
+            if (currentCard > 0) setCurrentCard(currentCard - 1);
+          }}
+          text="<"
+        />
+        <CircleButton
+          onClick={() => {
+            if (currentCard < flashcards.length - 1)
+              setCurrentCard(currentCard + 1);
+          }}
+          text=">"
+        />
+      </div>
     </div>
   );
 };
