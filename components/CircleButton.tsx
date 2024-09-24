@@ -5,7 +5,7 @@ const CircleButton = ({
   onClick: () => void;
   text: string;
 }) => {
-  return <button>{text}</button>;
+  return <button onClick={onClick}>{text}</button>;
 };
 
 export default CircleButton;

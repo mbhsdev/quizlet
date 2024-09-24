@@ -25,12 +25,14 @@ const Home = () => {
       <div className="flex flex-row justify-between">
         <CircleButton
           onClick={() => {
+            console.log("Left");
             if (currentCard > 0) setCurrentCard(currentCard - 1);
           }}
           text="<"
         />
         <CircleButton
           onClick={() => {
+            console.log("Right");
             if (currentCard < flashcards.length - 1)
               setCurrentCard(currentCard + 1);
           }}
