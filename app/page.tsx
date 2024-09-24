@@ -8,11 +8,7 @@ import { FlashcardType } from "@/interfaces";
 import { useState } from "react";
 
 const Home = () => {
-  const [flashcards, setFlashcards] = useState<FlashcardType[]>([
-    { definition: "A", term: "B" },
-    { definition: "C", term: "D" },
-    { definition: "E", term: "F" },
-  ]);
+  const [flashcards, setFlashcards] = useState<FlashcardType[]>([]);
   const [side, setSide] = useState<"term" | "definition">("term");
   const [currentCard, setCurrentCard] = useState<number>(0);
   const [term, setTerm] = useState<string>("");
@@ -20,12 +16,13 @@ const Home = () => {
   return (
     <div className="px-4 py-8 h-screen">
       <h1 className="text-2xl">Quizlet</h1>
-      <h2>{currentCard}</h2>
-      <Flashcard
-        flashcard={flashcards[currentCard]}
-        side={side}
-        setSide={setSide}
-      />
+      {flashcards.length > 0 && (
+        <Flashcard
+          flashcard={flashcards[currentCard]}
+          side={side}
+          setSide={setSide}
+        />
+      )}
       <div className="flex flex-row justify-between">
         <CircleButton
           onClick={() => {
