@@ -15,13 +15,6 @@ const Home = () => {
   return (
     <div className="px-4 py-8">
       <h1 className="text-2xl">Quizlet</h1>
-      <button
-        onClick={() =>
-          side === "term" ? setSide("definition") : setSide("term")
-        }
-      >
-        {side}
-      </button>
       <h2>{currentCard}</h2>
       <Flashcard
         flashcard={flashcards[currentCard]}

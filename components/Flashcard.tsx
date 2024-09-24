@@ -10,7 +10,11 @@ const Flashcard = ({
   setSide: (side: "term" | "definition") => void;
 }) => {
   return (
-    <div>
+    <div
+      onClick={() =>
+        side === "term" ? setSide("definition") : setSide("term")
+      }
+    >
       {side === "term" ? (
         <h2>{flashcard.term}</h2>
       ) : (
