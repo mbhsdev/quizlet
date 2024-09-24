@@ -1,4 +1,4 @@
-export interface Flashcard {
+export interface FlashcardType {
   term: string;
   definition: string;
 }

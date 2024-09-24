@@ -1,10 +1,11 @@
 "use client";
 
-import { Flashcard } from "@/interfaces";
+import Flashcard from "@/components/Flashcard";
+import { FlashcardType } from "@/interfaces";
 import { useState } from "react";
 
 const Home = () => {
-  const [flashcards, setFlashcards] = useState<Flashcard[]>([
+  const [flashcards, setFlashcards] = useState<FlashcardType[]>([
     { definition: "A", term: "B" },
     { definition: "C", term: "D" },
     { definition: "E", term: "F" },
@@ -22,14 +23,11 @@ const Home = () => {
         {side}
       </button>
       <h2>{currentCard}</h2>
-      {flashcards.map((card) => {
-        return (
-          <>
-            <h2>{card.term}</h2>
-            <p>{card.definition}</p>
-          </>
-        );
-      })}
+      <Flashcard
+        flashcard={flashcards[currentCard]}
+        side={side}
+        setSide={setSide}
+      />
     </div>
   );
 };
