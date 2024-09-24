@@ -10,7 +10,7 @@ const Home = () => {
     { definition: "E", term: "F" },
   ]);
   const [side, setSide] = useState<"term" | "definition">("term");
-
+  const [currentCard, setCurrentCard] = useState<number>(0);
   return (
     <div className="px-4 py-8">
       <h1 className="text-2xl">Quizlet</h1>
@@ -21,6 +21,7 @@ const Home = () => {
       >
         {side}
       </button>
+      <h2>{currentCard}</h2>
       {flashcards.map((card) => {
         return (
           <>
