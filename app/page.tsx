@@ -15,7 +15,7 @@ const Home = () => {
   const [definition, setDefinition] = useState<string>("");
   return (
     <div className="px-4 py-8 h-screen">
-      <h1 className="text-2xl">Quizlet</h1>
+      <h1 className="text-2xl mb-8">Quizlet</h1>
       {flashcards.length > 0 && (
         <Flashcard
           flashcard={flashcards[currentCard]}
@@ -23,7 +23,7 @@ const Home = () => {
           setSide={setSide}
         />
       )}
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between w-1/2 mt-8">
         <CircleButton
           onClick={() => {
             console.log("Left");
@@ -31,6 +31,7 @@ const Home = () => {
           }}
           text="<"
         />
+        <h2>Card: {currentCard}</h2>
         <CircleButton
           onClick={() => {
             console.log("Right");
@@ -50,9 +51,16 @@ const Home = () => {
           setTerm("");
           setDefinition("");
         }}
+        className="mt-8"
       >
-        <TextField field={term} setField={setTerm} />
-        <TextField field={definition} setField={setDefinition} />
+        <div className="flex items-center justify-between w-[500px] mb-2">
+          <h2>Term</h2>
+          <TextField field={term} setField={setTerm} />
+        </div>
+        <div className="flex items-center justify-between w-[500px] mb-2">
+          <h2>Definition</h2>
+          <TextField field={definition} setField={setDefinition} />
+        </div>
         <SubmitButton />
       </form>
     </div>

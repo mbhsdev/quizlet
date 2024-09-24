@@ -1,6 +1,6 @@
 const SubmitButton = () => {
   return (
-    <button type="submit" className=" border p-2">
+    <button type="submit" className=" border border-black p-2 rounded-md">
       Submit
     </button>
   );

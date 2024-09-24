@@ -9,7 +9,7 @@ const TextField = ({
     <input
       onChange={(e) => setField(e.target.value)}
       value={field}
-      className="border border-black p-1"
+      className="border border-black p-1 rounded-md w-[300px]"
       type="text"
     />
   );
