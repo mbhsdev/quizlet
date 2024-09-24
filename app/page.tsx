@@ -15,6 +15,8 @@ const Home = () => {
   ]);
   const [side, setSide] = useState<"term" | "definition">("term");
   const [currentCard, setCurrentCard] = useState<number>(0);
+  const [term, setTerm] = useState<string>("");
+  const [definition, setDefinition] = useState<string>("");
   return (
     <div className="px-4 py-8 h-screen">
       <h1 className="text-2xl">Quizlet</h1>
@@ -41,9 +43,19 @@ const Home = () => {
           text=">"
         />
       </div>
-      <form onSubmit={() => setFlashcards({ ...flashcards })}>
-        <TextField />
-        <TextField />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setFlashcards([
+            ...flashcards,
+            { definition: definition, term: term },
+          ]);
+          setTerm("");
+          setDefinition("");
+        }}
+      >
+        <TextField field={term} setField={setTerm} />
+        <TextField field={definition} setField={setDefinition} />
         <SubmitButton />
       </form>
     </div>
