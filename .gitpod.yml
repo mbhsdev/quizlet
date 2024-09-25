@@ -6,7 +6,7 @@
 
 tasks:
   - init: npm install
-    command: npm run start
+    command: npm run dev
 
 ports:
   - name: Preview
