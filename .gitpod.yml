@@ -6,7 +6,9 @@
 
 tasks:
   - init: npm install
-    command: npm run dev
+    command: |
+            git switch template
+            npm run dev
 
 ports:
   - name: Preview
